@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This is a Trivia game made by Maor, Gil, Amit, Niv.\
+This is a Trivia game made by Maor, Gil.\
 Each question is chosen at random (read below for more info) and all of the parameters of the questions are unique, this ensure hard yet rewarding questions!
 
 ## Randomization
