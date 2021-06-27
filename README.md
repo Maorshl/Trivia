@@ -45,6 +45,6 @@ The scores will be arranged from the highest to the lowest.
 
 This app was made by:\
 Maor-[Maorshl](https://pages.github.com/Maorshl)\
-Gil-[gil6464](https://pages.github.com/gil6464)\
+Gil-[gil6464](https://pages.github.com/gil6464)
 
 
