@@ -6,8 +6,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./Navbar.css";
 import axios from "axios";
 import Cookies from "js-cookie";
-import Home from "../Home/Game";
-import First from "../Home/First";
+import Home from "../Home/Home";
+import First from "../Home/First.js";
+import exit from "./exit.png";
+
 
 function Navbar() {
   const [player, setPlayer] = useState({});
@@ -29,8 +31,12 @@ function Navbar() {
             <li className="navbarli">
               <Link to="/leaderboard">Leaderboard</Link>
             </li>
-            <li className="navbarli logout" onClick={logout}>
-              <Link to="/">Logout</Link>
+            <li id="game-name">World Trivia Game</li>
+            <li id="logout" className="navbarli logout" onClick={logout}>
+              <Link to="/">
+                {" "}
+                <img id="exit" src={exit} /> Logout
+              </Link>
             </li>
           </ul>
         </nav>

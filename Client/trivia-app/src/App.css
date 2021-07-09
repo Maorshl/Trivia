@@ -1,8 +1,20 @@
 * {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Optima;
+  font-size: 1.1rem;
 }
+.App {
+  text-align: center;
+  background-color: #607d8b;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 table {
-  /* margin-top: 40px; */
   text-align: center;
 }
 thead {
@@ -13,20 +25,19 @@ H1 {
 }
 
 button {
-  display: inline-block;
   padding: 0.3em 1.2em;
   margin: 0 0.3em 0.3em 0;
   border-radius: 2em;
-  box-sizing: border-box;
-  text-decoration: none;
+  border: none;
   color: #ffffff;
-  background-color: #4eb5f1;
+  background-color: #455a64;
   text-align: center;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
+  width: 15vw;
 }
 
-button :hover {
-  background-color: #4095c6;
+button:hover {
+  border: 2px solid white;
 }
 
 table {

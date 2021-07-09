@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import "./Login.css";
+
 // add route for sign up,
 
 function Login({ setPlayer }) {
@@ -29,33 +31,49 @@ function Login({ setPlayer }) {
   return (
     <div id="Login">
       {isLogged && <Redirect to="/game"></Redirect>}
-      <h1 id="Login-Header">Login page</h1>
-      <h3>Enter your username to login</h3>
+      <h2 id="login-welcome">
+        Hello, <br /> Welcome Back!
+      </h2>
+      <div className="card">
+        <label className="input">
+          <input
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            className="input__field"
+            type="text"
+            placeholder=" "
+          />
+          <span className="input__label">Username</span>
+        </label>
+        <label className="input">
+          <input
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            className="input__field"
+            type="text"
+            placeholder=" "
+          />
+          <span className="input__label">Password</span>
+        </label>
 
-      <input
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-        type="text"
-        placeholder="Name"
-      />
-      <input
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-        type="password"
-        placeholder="Password"
-      />
-      <button
-        onClick={() => {
-          login();
-        }}
-      >
-        Login
-      </button>
-      <div>
-        <p>Not a user yet?</p>
-        <Link to="/signup">Signup</Link>
+        <div className="button-group">
+          <button
+            className="button-group"
+            onClick={() => {
+              login();
+            }}
+          >
+            Login
+          </button>
+        </div>
+      </div>
+      <div id="redirect">
+        <p id="not-user">Not a user yet?</p>
+        <Link to="/signup" id="redirect-span">
+          Register
+        </Link>
       </div>
     </div>
   );

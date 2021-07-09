@@ -1,0 +1,111 @@
+#login-welcome {
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  color: white;
+}
+
+#Login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  margin-top: 2rem;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 4px;
+  border: 3px solid black;
+  -webkit-box-shadow: 0.5rem 0.5rem 0 black;
+          box-shadow: 0.5rem 0.5rem 0 black;
+}
+
+.card *:first-child {
+  margin-top: 0;
+}
+
+.input {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0.5rem;
+  white-space: nowrap;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  background: white;
+  -webkit-transition: -webkit-transform 120ms ease-in;
+  transition: -webkit-transform 120ms ease-in;
+  transition: transform 120ms ease-in;
+  transition: transform 120ms ease-in, -webkit-transform 120ms ease-in;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.input__field {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 3px solid currentColor;
+  padding: 0.8rem 0.5rem;
+  color: currentColor;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+  -webkit-transform: translate(0.25rem, -65%) scale(0.8);
+          transform: translate(0.25rem, -65%) scale(0.8);
+  color: #fab700;
+}
+
+.button-group {
+  margin-top: 1.5rem;
+}
+
+#redirect {
+  margin-top: 5rem;
+  line-height: 3rem;
+}
+
+#not-user,
+#redirect-span {
+  font-size: 1.4rem;
+}
+
+#redirect-span {
+  text-decoration: none;
+  color: white;
+  background-color: #455a64;
+  padding: 0.3em 1.2em;
+  border-radius: 2em;
+}
+
+#redirect-span:hover {
+  border: 2px solid white;
+}
+/*# sourceMappingURL=Login.css.map */

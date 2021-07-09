@@ -1,0 +1,73 @@
+.loginAndSignup {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+#welcome-header {
+  width: 30rem;
+  font-size: 5rem;
+  color: #ffffff;
+}
+
+.question-image {
+  height: 13rem;
+  width: 13rem;
+  margin-left: 2rem;
+}
+#gifs1 {
+  position: absolute;
+  left: 5rem;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+}
+#gifs2 {
+  position: absolute;
+  right: 5rem;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+#register {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+#login {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+#table1 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 2.5rem;
+  top: 5rem;
+}
+#table3 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 3rem;
+  top: 5rem;
+}
+#globe {
+  width: 35rem;
+  height: 35rem;
+  position: absolute;
+  left: 36rem;
+  top: 18rem;
+}
