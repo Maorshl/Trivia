@@ -1,9 +1,20 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-function TypeTwo({ updateCounter, updateCounterIncorrect, setQuestionType }) {
+let correctText;
+
+function TypeTwo({
+  updateCounter,
+  updateCounterIncorrect,
+  setQuestionType,
+  setCounter,
+  stop,
+  setAnswer,
+}) {
   //Added a wrapper to correct function since we need to use updateCounter function which passes from HOME PAGE
   const [question, setQuestion] = useState(undefined);
   const [rated, setRated] = useState(undefined);
+  const [showButton, setButton] = useState(false);
+  const [next, showNext] = useState(false);
 
   const getTypeTwoQuestion = async () => {
     const { data } = await axios.get("/typetwo");
@@ -15,37 +26,63 @@ function TypeTwo({ updateCounter, updateCounterIncorrect, setQuestionType }) {
   const correctWrapper = () => {
     correct();
     updateCounter();
-    setQuestionType(2);
+    setButton(true);
+    showNext(true);
+    setAnswer(undefined, 1);
+    stop();
   };
 
   const inCorrectWrapper = () => {
     inCorrect();
     updateCounterIncorrect();
-    setQuestionType(2);
+    setButton(true);
+    showNext(true);
+    setAnswer(correctText, 2);
+    stop();
   };
   if (question) {
-    let buttonArray = [];
     for (let country of question.countries) {
       if (country.country === question.askOn) {
-        buttonArray.push(
-          <button key={getNewKey()} onClick={() => correctWrapper()}>
-            {country[question.column]}
-          </button>
-        );
-      } else {
-        buttonArray.push(
-          <button key={getNewKey()} onClick={() => inCorrectWrapper()}>
-            {country[question.column]}
-          </button>
-        );
+        correctText = country[question.column];
       }
     }
 
+    let buttonArray = [];
+    if (!showButton) {
+      for (let country of question.countries) {
+        if (country.country === question.askOn) {
+          buttonArray.push(
+            <button key={getNewKey()} onClick={() => correctWrapper()}>
+              {country[question.column]}
+            </button>
+          );
+        } else {
+          buttonArray.push(
+            <button key={getNewKey()} onClick={() => inCorrectWrapper()}>
+              {country[question.column]}
+            </button>
+          );
+        }
+      }
+    }
     let buttons;
     if (!rated) {
       buttons = getButtonList(question, setRated);
     } else {
       buttons = <h1>Thank you for rating</h1>;
+    }
+    let nextButton = undefined;
+    if (next) {
+      nextButton = (
+        <button
+          onClick={() => {
+            setQuestionType(2);
+            setCounter();
+          }}
+        >
+          next question
+        </button>
+      );
     }
 
     return (
@@ -55,6 +92,7 @@ function TypeTwo({ updateCounter, updateCounterIncorrect, setQuestionType }) {
         </h1>
         {buttonArray}
         <div className="rating">{buttons}</div>
+        {nextButton}
       </div>
     );
   } else {

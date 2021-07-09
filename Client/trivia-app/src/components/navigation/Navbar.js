@@ -6,9 +6,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./Navbar.css";
 import axios from "axios";
 import Cookies from "js-cookie";
-import Home from "../home/Home";
-import First from "../home/First.js";
+import Home from "../Home/Home";
+import First from "../Home/First.js";
 import exit from "./exit.png";
+
 
 function Navbar() {
   const [player, setPlayer] = useState({});

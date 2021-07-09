@@ -1,0 +1,19 @@
+runtime: nodejs
+env: flex
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+beta_settings:
+  cloud_sql_instances: stalwart-micron-312807:europe-west3:trivia
+env_variables:
+  DB_USERNAME: root
+  DB_PASSWORD: 228944666
+  REFRESH_TOKEN_SECRET: nirhamagnir
+  ACCESS_TOKEN_SECRET: nirhamagnir123
+  INSTANCE_CONNECTION_NAME: stalwart-micron-312807:europe-west3:trivia
+  NODE_ENV: production

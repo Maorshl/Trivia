@@ -2,7 +2,14 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router";
 
-function GameOver({ currentPlayer, setPlayer, setTimer, setCount }) {
+function GameOver({
+  currentPlayer,
+  setPlayer,
+  setTimer,
+  setCount,
+  setIncorrectCount,
+  setQuestionCount,
+}) {
   const [leaderBoard, setLeaderBoard] = useState([]);
   const [isPosted, setPosted] = useState(false);
   const [startNewGame, setstartNewGame] = useState(false);
@@ -15,7 +22,7 @@ function GameOver({ currentPlayer, setPlayer, setTimer, setCount }) {
     getLeaderboard();
   }, []);
 
-  const postUser = async (user) => {
+  const postUser = async user => {
     await axios.post("/user/score", {
       name: user.name,
       score: user.score,
@@ -33,6 +40,8 @@ function GameOver({ currentPlayer, setPlayer, setTimer, setCount }) {
     setstartNewGame(true);
     setTimer(20);
     setCount(0);
+    setIncorrectCount(0);
+    setQuestionCount(1);
   };
   if (startNewGame) {
     return <Redirect to="/game"></Redirect>;
@@ -54,7 +63,7 @@ function GameOver({ currentPlayer, setPlayer, setTimer, setCount }) {
               Post your Score!
             </button>
           )}
-          <button onClick={playAgain}>Play another round!</button>
+          <button onClick={() => playAgain()}>Play another round!</button>
         </div>
       )}
 

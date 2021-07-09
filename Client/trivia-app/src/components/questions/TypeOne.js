@@ -1,9 +1,18 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+//TODO
 
-function TypeOne({ updateCounter, updateCounterIncorrect, setQuestionType }) {
+function TypeOne({
+  updateCounter,
+  updateCounterIncorrect,
+  setQuestionType,
+  setCounter,
+  setAnswer,
+  stop,
+}) {
   const [question, setQuestion] = useState(undefined);
   const [rated, setRated] = useState(false);
+  const [next, showNext] = useState(false);
 
   const getTypeOneQuestion = async () => {
     const { data } = await axios.get("/typeone");
@@ -17,13 +26,17 @@ function TypeOne({ updateCounter, updateCounterIncorrect, setQuestionType }) {
   const correctWrapper = () => {
     correct();
     updateCounter();
-    setQuestionType(1);
+    showNext(true);
+    setAnswer(undefined, 1);
+    stop();
   };
 
   const inCorrectWrapper = () => {
     inCorrect();
     updateCounterIncorrect();
-    setQuestionType(1);
+    showNext(true);
+    setAnswer(question.correct, 2);
+    stop();
   };
 
   let buttons;
@@ -35,26 +48,42 @@ function TypeOne({ updateCounter, updateCounterIncorrect, setQuestionType }) {
 
   if (question) {
     let buttonArray = [];
-    for (let country of question.countries) {
-      if (country.country === question.correct) {
-        buttonArray.push(
-          <button key={getNewKey()} onClick={() => correctWrapper()}>
-            {country.country}
-          </button>
-        );
-      } else {
-        buttonArray.push(
-          <button key={getNewKey()} onClick={() => inCorrectWrapper()}>
-            {country.country}
-          </button>
-        );
+    if (!next) {
+      for (let country of question.countries) {
+        if (country.country === question.correct) {
+          buttonArray.push(
+            <button key={getNewKey()} onClick={() => correctWrapper()}>
+              {country.country}
+            </button>
+          );
+        } else {
+          buttonArray.push(
+            <button key={getNewKey()} onClick={() => inCorrectWrapper()}>
+              {country.country}
+            </button>
+          );
+        }
       }
+    }
+    let nextButton = undefined;
+    if (next) {
+      nextButton = (
+        <button
+          onClick={() => {
+            setQuestionType(1);
+            setCounter();
+          }}
+        >
+          next question
+        </button>
+      );
     }
     return (
       <div className="TypeOne">
         <h1>{question.template}</h1>
         {buttonArray}
         <div className="rating">{buttons}</div>
+        {nextButton}
       </div>
     );
   } else {
@@ -66,13 +95,9 @@ function TypeOne({ updateCounter, updateCounterIncorrect, setQuestionType }) {
   }
 }
 
-const correct = () => {
-  //Add correct functionallity
-};
+const correct = () => {};
 
-const inCorrect = () => {
-  //Add incorrect functionallity
-};
+const inCorrect = () => {};
 
 const getNewKey = () => {
   return 1000000 + Math.floor(Math.random() * 9000000);

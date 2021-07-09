@@ -46,7 +46,6 @@ function Login({ setPlayer }) {
           />
           <span className="input__label">Username</span>
         </label>
-
         <label className="input">
           <input
             onChange={(e) => {

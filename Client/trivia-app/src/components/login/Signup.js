@@ -9,6 +9,7 @@ export default function Signup(props) {
   const [name, setName] = useState();
   const [password, setPassword] = useState();
   const [isSigned, setSigned] = useState(false);
+
   const signup = () => {
     axios
       .post("/user/register", {
@@ -17,7 +18,6 @@ export default function Signup(props) {
       })
       .then((result) => {
         setSigned(true);
-        ///////////
       })
       .catch((err) => {
         console.log(err);
