@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #455a64;
+  background-color: #333;
   position: fixed;
   top: 0;
   width: 100%;
@@ -22,25 +22,14 @@
 }
 
 .navbarli a:hover {
-  background-color: #276681;
+  background-color: rgb(0, 174, 255);
 }
 .logout a {
-  padding-left: 2.5rem;
-  position: absolute;
-  right: 0;
+  color: red;
 }
-#game-name {
-  display: inline-block;
-  color: white;
-  padding-top: 5px;
-  margin-right: 10rem;
-  width: fit-content;
-  font-size: 2rem;
-}
-
-#exit {
-  width: 1.5rem;
-  height: 1.2rem;
-  position: absolute;
-  right: 4.5rem;
+.loginAndSignup {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
