@@ -5,10 +5,6 @@
 This is a Trivia game made by Maor, Gil.\
 Each question is chosen at random (read below for more info) and all of the parameters of the questions are unique, this ensure hard yet rewarding questions!
 
-## Game Progress
-
-![](./Client/trivia-app/public/ReadMeFiles/GameProgress.gif)
-
 ## Randomization
 
 Each question is generated on-demand which allows it to have some unique features.\
@@ -20,6 +16,8 @@ randomized whilst the last question is from a database of rated questions.
 As mentioned above, the third question in a cycle will be received from a database containing rated questions, the higher the rating of the question - the higher the probability of it being shown. \
 Each question can be rated multiple times which allow its overall average rating to be \
 changed and modified the longer people play the game and rate questions.
+
+![](./Client/trivia-app/public/ReadMeFiles/3.gif)
 
 ## Leaderboard
 
@@ -35,6 +33,8 @@ The scores will be arranged from the highest to the lowest.
 - If you can, rate the question, the more people rate questions the better!
 - Each question answered correctly earn you 100 points.
 - After the game ends, watch the leaderboard and where you are with respect to others
+
+![](./Client/trivia-app/public/ReadMeFiles/2.gif)
 
 ## How to install the app on your device
 
