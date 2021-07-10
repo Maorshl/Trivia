@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import Cookies from "js-cookie";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 axios.interceptors.response.use(
   (response) => {
