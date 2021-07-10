@@ -26,12 +26,16 @@ function Navbar() {
             <li className="navbarli">
               <Link to="/">Home</Link>
             </li>
-            <li className="navbarli">
-              <Link to="/leaderboard">Leaderboard</Link>
-            </li>
-            <li className="navbarli logout" onClick={logout}>
-              <Link to="/">Logout</Link>
-            </li>
+            {player.name && (
+              <>
+                <li className="navbarli">
+                  <Link to="/leaderboard">Leaderboard</Link>
+                </li>
+                <li className="navbarli logout" onClick={logout}>
+                  <Link to="/">Logout</Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
 
