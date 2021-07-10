@@ -1,3 +1,6 @@
+body {
+  color: white;
+}
 .navbarlist {
   list-style-type: none;
   margin: 0;
