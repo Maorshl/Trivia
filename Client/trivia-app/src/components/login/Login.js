@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import Button from "react-bootstrap/Button";
+
 // add route for sign up,
 
 function Login({ setPlayer }) {
@@ -47,6 +49,7 @@ function Login({ setPlayer }) {
         placeholder="Password"
       />
       <button
+        id="loginButtons"
         onClick={() => {
           login();
         }}
