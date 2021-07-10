@@ -12,28 +12,99 @@ H1 {
   margin-top: 80px;
 }
 
-button {
+#loginButtons {
+  width: 10rem;
+  margin: auto;
+  margin-top: 5rem;
+  box-shadow: inset 0px 1px 0px 0px #a4e271;
+  background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+  background-color: #89c403;
+  border-radius: 6px;
+  border: 1px solid #74b807;
   display: inline-block;
-  padding: 0.3em 1.2em;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 2em;
-  box-sizing: border-box;
-  text-decoration: none;
+  cursor: pointer;
   color: #ffffff;
-  background-color: #4eb5f1;
-  text-align: center;
-  transition: all 0.2s;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528009;
 }
-
-button :hover {
-  background-color: #4095c6;
+#loginButtons:hover {
+  background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+  background-color: #77a809;
 }
-
+#loginButtons:active {
+  position: relative;
+  top: 1px;
+}
+#backgorund {
+  z-index: -1000;
+}
 table {
   margin-right: auto;
   margin-left: auto;
 }
+#rating-button {
+  width: 10rem;
+  margin: auto;
+  margin-top: 5rem;
+  box-shadow: inset 0px 1px 0px 0px #7173e2;
+  background: linear-gradient(to bottom, #035dc4 5%, #0949a8 100%);
+  background-color: #0357c4;
+  border-radius: 6px;
+  border: 1px solid #0736b8;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #091f80;
+}
+#rating-button:hover {
+  background: linear-gradient(to bottom, #0921a8 5%, #0336c4 100%);
+  background-color: #0933a8;
+}
+#rating-button:active {
+  position: relative;
+  top: 1px;
+}
+#question-button {
+  width: 10rem;
+  margin: auto;
+  margin-top: 5rem;
+  box-shadow: inset 0px 1px 0px 0px #a4e271;
+  background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+  background-color: #89c403;
+  border-radius: 6px;
+  border: 1px solid #74b807;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528009;
+}
+#question-button:hover {
+  background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+  background-color: #77a809;
+}
+#question-button:active {
+  position: relative;
+  top: 1px;
+}
 
 #leaderboard {
   margin-top: 0px;
+}
+#login {
+  display: flex;
+  flex-direction: column;
 }
