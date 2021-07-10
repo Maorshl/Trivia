@@ -25,7 +25,6 @@ function SavedQuestion({
   //Added a wrapper to correct function since we need to use updateCounter function which passes from HOME PAGE
   const correctWrapper = () => {
     setAnswer(undefined, 1);
-    correct();
     updateCounter();
     showNext(true);
     stop();
@@ -33,7 +32,6 @@ function SavedQuestion({
 
   const inCorrectWrapper = () => {
     setAnswer(question.correct, 2);
-    inCorrect();
     updateCounterIncorrect();
     showNext(true);
     stop();
@@ -49,13 +47,21 @@ function SavedQuestion({
     for (let country of countries) {
       if (country === question.correct) {
         buttonArray.push(
-          <button key={getNewKey()} onClick={() => correctWrapper()}>
+          <button
+            id="question-button"
+            key={getNewKey()}
+            onClick={() => correctWrapper()}
+          >
             {country}
           </button>
         );
       } else {
         buttonArray.push(
-          <button key={getNewKey()} onClick={() => inCorrectWrapper()}>
+          <button
+            id="question-button"
+            key={getNewKey()}
+            onClick={() => inCorrectWrapper()}
+          >
             {country}
           </button>
         );
@@ -74,6 +80,7 @@ function SavedQuestion({
       buttonArray = undefined;
       nextButton = (
         <button
+          id="rating-button"
           onClick={() => {
             setQuestionType(0);
             setCounter();
@@ -105,31 +112,43 @@ const getButtonList = (id, setRated) => {
   let buttonList = [];
   buttonList.push(<h3 key={getNewKey()}>Rate this question!</h3>);
   buttonList.push(
-    <button key={getNewKey()} onClick={() => rateQuestion(1, id, setRated)}>
+    <button
+      id="rating-button"
+      key={getNewKey()}
+      onClick={() => rateQuestion(1, id, setRated)}
+    >
       1
     </button>,
-    <button key={getNewKey()} onClick={() => rateQuestion(2, id, setRated)}>
+    <button
+      id="rating-button"
+      key={getNewKey()}
+      onClick={() => rateQuestion(2, id, setRated)}
+    >
       2
     </button>,
-    <button key={getNewKey()} onClick={() => rateQuestion(3, id, setRated)}>
+    <button
+      id="rating-button"
+      key={getNewKey()}
+      onClick={() => rateQuestion(3, id, setRated)}
+    >
       3
     </button>,
-    <button key={getNewKey()} onClick={() => rateQuestion(4, id, setRated)}>
+    <button
+      id="rating-button"
+      key={getNewKey()}
+      onClick={() => rateQuestion(4, id, setRated)}
+    >
       4
     </button>,
-    <button key={getNewKey()} onClick={() => rateQuestion(5, id, setRated)}>
+    <button
+      id="rating-button"
+      key={getNewKey()}
+      onClick={() => rateQuestion(5, id, setRated)}
+    >
       5
     </button>
   );
   return buttonList;
-};
-// {key={getNewKey()}
-const correct = () => {
-  //Add correct functionallity
-};
-
-const inCorrect = () => {
-  //Add incorrect functionallity
 };
 
 const getNewKey = () => {
