@@ -9,6 +9,7 @@ function First(props) {
       {toLogin && <Redirect to="/login"></Redirect>}
       {toSignUp && <Redirect to="/signup"></Redirect>}
       <button
+        id="loginButtons"
         onClick={() => {
           setToLogin(true);
         }}
@@ -16,6 +17,7 @@ function First(props) {
         Login
       </button>
       <button
+        id="loginButtons"
         onClick={() => {
           setToSignUp(true);
         }}
