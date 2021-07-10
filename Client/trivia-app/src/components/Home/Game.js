@@ -122,7 +122,7 @@ function Home({ player, setPlayer }) {
     return (
       <div id="Login">
         <h1>{player.name}</h1>
-        <h3>Your Score is: {player.score}</h3>
+        <h3>Your Score is: {player.score.toFixed(1)}</h3>
         <h3>Correct answers: {player.correct}</h3>
         <h3>Incorrect answers: {incorrectCount}</h3>
         <h2>question number: {questionCount}</h2>
