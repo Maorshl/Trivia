@@ -22,7 +22,7 @@ function GameOver({
     getLeaderboard();
   }, []);
 
-  const postUser = async user => {
+  const postUser = async (user) => {
     await axios.post("/user/score", {
       name: user.name,
       score: user.score,
@@ -56,6 +56,7 @@ function GameOver({
           <p>{currentPlayer.name}, You are the weakest link</p>
           {!isPosted && (
             <button
+              id="question-button"
               onClick={() => {
                 postUser(currentPlayer);
               }}
@@ -63,7 +64,9 @@ function GameOver({
               Post your Score!
             </button>
           )}
-          <button onClick={() => playAgain()}>Play another round!</button>
+          <button id="rating-button" onClick={() => playAgain()}>
+            Play another round!
+          </button>
         </div>
       )}
 
