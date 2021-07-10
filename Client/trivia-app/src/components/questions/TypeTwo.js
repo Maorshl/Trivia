@@ -52,13 +52,21 @@ function TypeTwo({
       for (let country of question.countries) {
         if (country.country === question.askOn) {
           buttonArray.push(
-            <button key={getNewKey()} onClick={() => correctWrapper()}>
+            <button
+              id="question-button"
+              key={getNewKey()}
+              onClick={() => correctWrapper()}
+            >
               {country[question.column]}
             </button>
           );
         } else {
           buttonArray.push(
-            <button key={getNewKey()} onClick={() => inCorrectWrapper()}>
+            <button
+              id="question-button"
+              key={getNewKey()}
+              onClick={() => inCorrectWrapper()}
+            >
               {country[question.column]}
             </button>
           );
@@ -75,6 +83,7 @@ function TypeTwo({
     if (next) {
       nextButton = (
         <button
+          id="rating-button"
           onClick={() => {
             setQuestionType(2);
             setCounter();
@@ -136,30 +145,35 @@ const getButtonList = (question, setRated) => {
   buttonList.push(<h3 key={getNewKey()}>Rate this question!</h3>);
   buttonList.push(
     <button
+      id="rating-button"
       key={getNewKey()}
       onClick={() => rateQuestion(1, question, setRated)}
     >
       1
     </button>,
     <button
+      id="rating-button"
       key={getNewKey()}
       onClick={() => rateQuestion(2, question, setRated)}
     >
       2
     </button>,
     <button
+      id="rating-button"
       key={getNewKey()}
       onClick={() => rateQuestion(3, question, setRated)}
     >
       3
     </button>,
     <button
+      id="rating-button"
       key={getNewKey()}
       onClick={() => rateQuestion(4, question, setRated)}
     >
       4
     </button>,
     <button
+      id="rating-button"
       key={getNewKey()}
       onClick={() => rateQuestion(5, question, setRated)}
     >
